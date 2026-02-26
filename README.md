@@ -104,3 +104,90 @@ graph TD
 ```
 
 This diagram illustrates the relationships between the main components and the design patterns used in the repository.
+
+## Setting Up the Environment to Build This Repository
+
+If you are starting with a fresh operating system, follow these steps to set up the required tools and dependencies to build and run this repository.
+
+### Prerequisites
+
+1. **Install `make`**
+   - `make` is required to build the project using the provided `makefile`.
+   - On Ubuntu (or WSL):
+
+    ```bash
+    sudo apt update
+    sudo apt install make
+    ```
+
+   - On Windows, you can install `make` via MinGW or Cygwin.
+
+2. **Install `g++`**
+   - A C++ compiler is required to compile the source code.
+   - On Ubuntu (or WSL):
+
+    ```bash
+    sudo apt install g++
+    ```
+
+   - On Windows, you can install `g++` via MinGW or WSL.
+
+3. **Install CMake**
+   - CMake is required to build Google Test and other CMake-based tools.
+   - On Ubuntu (or WSL):
+
+    ```bash
+    sudo apt install cmake
+    ```
+
+   - On Windows, download and install CMake from [cmake.org](https://cmake.org/).
+
+4. **Install Google Test (gtest)**
+   - Google Test is required to run the unit tests.
+   - On Ubuntu (or WSL):
+
+    ```bash
+    sudo apt install libgtest-dev
+    cd /usr/src/gtest
+    sudo cmake .
+    sudo make
+    sudo cp *.a /usr/lib
+    ```
+
+   - On Windows, you can use `vcpkg` to install Google Test:
+
+    ```bash
+    git clone https://github.com/microsoft/vcpkg.git
+    cd vcpkg
+    .\bootstrap-vcpkg.bat
+    .\vcpkg.exe install gtest
+    ```
+
+### Building the Project
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/zidane0000/POSD.git
+   cd POSD
+   ```
+
+2. Build the project:
+
+   ```bash
+   make
+   ```
+
+3. Run the tests:
+
+   ```bash
+   ./bin/ut_main
+   ```
+
+### Cleaning the Build
+
+To clean up the build artifacts, run:
+
+```bash
+make clean
+```
